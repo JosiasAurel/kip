@@ -5,8 +5,6 @@ import styles from "../styles/all.module.css";
 // import utils
 import { serialize, deserialize } from "../utils/serializers";
 
-// import ipfs
-
 const Home = () => {
     const [title, setTitle] = useState("");
     const [note, setNote] = useState("");
@@ -17,13 +15,14 @@ const Home = () => {
     }
 
     // save note handler
-    function saveNote() {
-        let newNote = {
-            title: title,
-            note: note
-        };
-
-        let serialized = serialize(newNote);
+    async function saveNote() {
+        fetch("/api/save", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({title, note})
+        })
     }
     return (
         <div>
@@ -39,7 +38,7 @@ const Home = () => {
                 </textarea>
             </div>
             <span>
-                <button>
+                <button onClick={ e => saveNote()}>
                     Save
                 </button>
             </span>
