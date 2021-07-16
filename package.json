@@ -1,0 +1,33 @@
+{
+  "name": "kip",
+  "version": "1.0.0",
+  "description": "A note taking app that runs on IPFS",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "next dev",
+    "start": "next start",
+    "build": "next build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JosiasAurel/KiP.git"
+  },
+  "keywords": [
+    "Note",
+    "web3",
+    "data"
+  ],
+  "author": "Josias Aurel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JosiasAurel/KiP/issues"
+  },
+  "homepage": "https://github.com/JosiasAurel/KiP#readme",
+  "dependencies": {
+    "ipfs": "^0.55.4",
+    "next": "^11.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
