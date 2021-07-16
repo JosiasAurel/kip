@@ -2,7 +2,29 @@ import React, { useState, useEffect } from "react";
 
 import styles from "../styles/all.module.css";
 
+// import utils
+import { serialize, deserialize } from "../utils/serializers";
+
+// import ipfs
+
 const Home = () => {
+    const [title, setTitle] = useState("");
+    const [note, setNote] = useState("");
+    
+    // text change handler
+    function textChangehandler(event, handler) {
+        handler(event.target.value);
+    }
+
+    // save note handler
+    function saveNote() {
+        let newNote = {
+            title: title,
+            note: note
+        };
+
+        let serialized = serialize(newNote);
+    }
     return (
         <div>
             <header>
@@ -10,9 +32,9 @@ const Home = () => {
             </header>
 
             <div className={styles.controls}>
-                <input type="text" name="" placeholder="Title" id="" />
+                <input value={title} onChange={e => textChangehandler(e, setTitle)} type="text" name="" placeholder="Title" id="" />
                 <div>
-                <textarea name="" id="" cols="50" rows="20">
+                <textarea value={note} onChange={e => textChangehandler(e, setNote)} name="" id="" cols="50" rows="20">
                 
                 </textarea>
             </div>
