@@ -1,13 +1,17 @@
 const express = require("express");
 const { serialize, deserialize } = require("./util");
 
+const IPFS = require("ipfs");
+
 const app = express();
 
 // enable JSON stuff
 app.use(express.json());
 
-app.post("/create", async  (req, res) => {
+app.post("/create", async (req, res) => {
     const { title, note } = req.body;
+
+    console.log(req.body)
 
     let note_ = {
         title: title,
@@ -32,6 +36,7 @@ app.post("/create", async  (req, res) => {
 
 app.post("/getnote", async (req, res) => {
     const { noteid } = req.body;
+    console.log(req.body)
 
     async function getNoteData() {
         const node = await IPFS.create()

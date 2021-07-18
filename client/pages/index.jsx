@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import styles from "../styles/all.module.css";
 
 // import utils
-import { serialize, deserialize } from "../utils/serializers";
+// import { serialize, deserialize } from "../utils/serializers";
 
 // server URL
 const server = "http://localhost:4000";
