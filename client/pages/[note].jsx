@@ -4,7 +4,7 @@ import Head from "next/head";
 
 import styles from "../styles/all.module.css";
 
-const server = "http://localhost:4000";
+const server = "https://KiP.josiasaurel.repl.co";
 
 const NotePage = ({ title, note }) => {
     console.log({title, note});

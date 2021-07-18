@@ -8,7 +8,7 @@ import styles from "../styles/all.module.css";
 import Head from "next/head";
 
 // server URL
-const server = "http://localhost:4000";
+const server = "https://KiP.josiasaurel.repl.co";
 
 const Home = () => {
     const [title, setTitle] = useState("");
