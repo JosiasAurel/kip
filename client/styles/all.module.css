@@ -4,3 +4,63 @@
   justify-content: center;
   align-items: center;
 }
+
+.controls input {
+  padding: 1em 2em;
+}
+
+.controls button {
+  background-color: blueviolet;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  color: white;
+  text-decoration: none;
+  margin: 1em;
+  border: solid transparent;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header h1 {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.notes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.inote {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 1em;
+  font-family: monospace;
+  box-shadow: 0 0 3px 2px whitesmoke;
+  margin: 5px;
+  border-radius: 5px;
+  padding: 4px;
+}
+
+.inote a {
+  background-color: blueviolet;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  color: white;
+  text-decoration: none;
+  margin: 1em;
+}
+
+.notePage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}

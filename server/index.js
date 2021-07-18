@@ -2,13 +2,15 @@ const express = require("express");
 const { serialize, deserialize } = require("./util");
 
 const IPFS = require("ipfs");
+const cors = require("cors");
 
 const app = express();
 
 // enable JSON stuff
 app.use(express.json());
+app.use(cors());
 
-app.post("/create", async (req, res) => {
+app.post("/create/", async (req, res) => {
     const { title, note } = req.body;
 
     console.log(req.body)
@@ -23,18 +25,18 @@ app.post("/create", async (req, res) => {
 
         let results = node.add(serialize(note_));
 
-        for await (const {cid} of results) {
-            console.log(cid.toString());
+        let rData = await results;
+        console.log(rData.path);
 
-            res.send(cid.toString());
-        }
+        res.send({id: rData.path});
+        node.stop();
     }
 
     // execute everything
     await doTheWork();
 });
 
-app.post("/getnote", async (req, res) => {
+app.post("/getnote/", async (req, res) => {
     const { noteid } = req.body;
     console.log(req.body)
 
@@ -52,6 +54,8 @@ app.post("/getnote", async (req, res) => {
         console.log(data);
 
         res.send(deserialize(data));
+
+        node.stop();
     }
 
     await getNoteData();
