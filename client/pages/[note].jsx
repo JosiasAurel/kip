@@ -30,6 +30,7 @@ export async function getServerSideProps(ctx) {
 
     const noteReq = await fetch(`${server}/getnote`, {
         method: "POST",
+        mode: "no-cors",
         headers: {
             "Content-Type": "application/json"
         },

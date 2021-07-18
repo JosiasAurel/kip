@@ -28,6 +28,7 @@ const Home = () => {
     async function saveNote() {
         fetch(`${server}/create`, {
             method: "POST",
+            mode: "no-cors",
             headers: {
                 "Content-Type": "application/json"
             },
