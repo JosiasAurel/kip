@@ -7,4 +7,4 @@ function deserialize(data) {
     return JSON.parse(data);
 }
 
-export { serialize, deserialize };
+module.exports = { serialize, deserialize };

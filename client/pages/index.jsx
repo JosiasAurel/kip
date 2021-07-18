@@ -5,6 +5,9 @@ import styles from "../styles/all.module.css";
 // import utils
 import { serialize, deserialize } from "../utils/serializers";
 
+// server URL
+const server = "http://localhost:4000";
+
 const Home = () => {
     const [title, setTitle] = useState("");
     const [note, setNote] = useState("");
@@ -16,7 +19,7 @@ const Home = () => {
 
     // save note handler
     async function saveNote() {
-        fetch("/api/save", {
+        fetch(`${server}/create`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
